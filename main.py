@@ -144,9 +144,9 @@ keyboard = Controller()
 
 root = tk.Tk()
 root.attributes("-topmost", True)
-root.attributes("-alpha", 0.8)
 root.config(bg="#121212")
 root.overrideredirect(True)
+root.geometry("620x200")
 
 Frame=tk.Frame(root,bg=bgcol)
 Frame.pack(side=tk.TOP,expand=True,fill='both')
@@ -170,7 +170,7 @@ drag=tk.Button(
             takefocus=0,
             bg='#252732',fg="#e5e5e7",highlightthickness=0
         )
-drag.pack(side=tk.LEFT,padx=2,pady=2)
+drag.pack(side=tk.LEFT,padx=2,pady=2,fill='both',expand=True)
 
 esc = tk.Button(
             Frame,
@@ -179,7 +179,7 @@ esc = tk.Button(
             command=lambda k="X": press_key(k),
             bg='#252732',fg="#e5e5e7",highlightthickness=0,activebackground='red'
         )
-esc.pack(side=tk.LEFT,padx=2,pady=2)
+esc.pack(side=tk.LEFT,padx=2,pady=2,fill='both',expand=True)
 
 drag.bind("<Button-1>", start_drag)
 drag.bind("<B1-Motion>", do_drag)
